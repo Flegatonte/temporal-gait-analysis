@@ -1,0 +1,19 @@
+# python
+__pycache__/
+*.pyc
+
+# environments
+.venv/
+.env/
+
+# data
+data/raw/
+data/CASIA-B/
+
+# outputs
+runs/
+checkpoints/
+*.pt
+
+# misc
+.DS_Store
