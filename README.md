@@ -85,7 +85,7 @@ python -m temporal_gait_analysis.cli test \
   --data-root <DATA_ROOT> \
   --split-json data/casia_b_splits_lt.json \
   --ckpt <CHECKPOINT_PATH> \
-  --eval-mode center_crop \
+  --eval-protocol center_crop \
   --device cuda
 
 Notes
