@@ -18,7 +18,6 @@ def build_parser():
     p_train.add_argument("--device", default="cuda", help="cuda|cpu|cuda:0 ...")
     p_train.add_argument("--seed", type=int, default=42)
 
-    # expose your main knobs (so you don't touch code every time)
     p_train.add_argument("--part-mode", type=int, default=16, help="1|4|8|16 (or corpse if you extend)")
     p_train.add_argument("--encoding", type=str, default="rpe",
                          choices=["absolute", "cpe", "cycle", "rpe", "sinusoidal"])
@@ -38,7 +37,6 @@ def build_parser():
     p_test.add_argument("--ckpt", required=True, help="path to checkpoint .pt")
     p_test.add_argument("--device", default="cuda", help="cuda|cpu|cuda:0 ...")
 
-    # IMPORTANT: must match run_test() expectations
     p_test.add_argument("--eval-protocol", dest="eval_protocol",
                         choices=["center_crop", "full_seq"], default="full_seq",
                         help="center_crop: 30 central frames; full_seq: sliding chunks + mean fusion")
@@ -47,9 +45,7 @@ def build_parser():
                         choices=["absolute", "cpe", "cycle", "rpe", "sinusoidal"])
     p_test.add_argument("--apply-aug-to-probe-in-eval", action="store_true", default=False)
 
-    
     # splits
-    
     p_split = sub.add_parser("make-splits", help="create CASIA-B LT split json")
     p_split.add_argument("--data-root", required=True, help="path to CASIA-B/output")
     p_split.add_argument("--out", required=True, help="output json path")
