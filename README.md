@@ -16,6 +16,8 @@ CASIA-B contains silhouette image sequences of **124 subjects**, recorded under:
 In this project, **raw videos are not used**.  
 Instead, we assume that silhouette frames have already been extracted and organised as temporal image sequences.
 
+You can download the preprocessed dataset here: https://www.kaggle.com/datasets/trnquanghuyn/casia-b
+
 ### Expected directory structure
 
 <DATA_ROOT>/
