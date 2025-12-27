@@ -60,6 +60,8 @@ pip install -e .
 PyTorch must be installed separately according to your system configuration.
 
 Usage
+(You can consult cli.py for all available parameters)
+
 Create CASIA-B LT splits
 
 python -m temporal_gait_analysis.cli make-splits \
@@ -77,7 +79,7 @@ python -m temporal_gait_analysis.cli train \
 Evaluation
 
 Evaluation follows the cross-view identification protocol:
-normal-walking sequences (NM) form the gallery, while all other conditions (BG, CL) are used as probes, excluding same-view matches.
+The first four normal-walking sequences (NM) form the gallery, while the last two combined with all other conditions (BG, CL) are used as probes, excluding same-view matches.
 
 python -m temporal_gait_analysis.cli test \
   --data-root <DATA_ROOT> \
